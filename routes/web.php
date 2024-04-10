@@ -14,6 +14,14 @@ use App\Http\Controllers\YourController;
 
 // Route::get('/url/{parameter}', [CryptController::class,'methodName']);
 
-Route::get('encrypt', [CryptController::class,'encrypt']);
-Route::get('decrypt', [CryptController::class,'decrypt']);
+Route::middleware('decryptParams')->group(function () {
+    Route::get('/index', [CryptController::class,'index']);
+});
+
+// Route::get('encrypt', [CryptController::class,'encrypt']);
+// Route::get('decrypt', [CryptController::class,'decrypt']);
+
+
+// Route::get('encrypt', [CryptController::class,'encrypt']);
+// Route::get('decrypt', [CryptController::class,'decrypt']);
 

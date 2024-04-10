@@ -8,18 +8,25 @@ use Illuminate\Support\Facades\Crypt;
 class CryptController extends Controller
 {
 
-    public function encrypt()
-   {
-    // dd(3245678);
-        $encrypted = Crypt::encryptString('Arjun');
-        print_r($encrypted);
-   }
+    public function index(Request $request)
+    {
+        $decryptedValue = $request->query('encrypted_value');
+       
+        return "Decrypted value: $decryptedValue";
+    }
 
-   public function decrypt()
-   {
-        $decrypt= Crypt::decryptString('eyJpdiI6Im5GRldTNnEzTDBXbGpXai9Bb25iK1E9PSIsInZhbHVlIjoiTC8xdGxydmEwd1Q1cEN4RDJFcmQ1UT09IiwibWFjIjoiZjY4OTBkZGI4ODhkMGYzMGYzN2QyMzA5ZGU2MTIxYzk0ZThkMzg2ZjAxYmJkMzUxYmExMGJjYzFjMTAyOWU1OCIsInRhZyI6IiJ9`');
-        print_r($decrypt);
-   }
+//     public function encrypt()
+//    {
+//     // dd(3245678);
+//         $encrypted = Crypt::encryptString('Arjun');
+//         print_r($encrypted);
+//    }
+
+//    public function decrypt()
+//    {
+//         $decrypt= Crypt::decryptString('eyJpdiI6IjE1ekg1WVp2c1VKbmhSWnBGZXFJRVE9PSIsInZhbHVlIjoiSWhzL0JoUUNYQkIvYjVSRHRXRWZOZz09IiwibWFjIjoiOWE4YzMyZTA0ZDg4YzI4M2FlMTlkM2I3N2IxYzg3ODI4NzliY2ZkYzA1YmI3OGM0YTQyZmFkMjY3OWUwYjRhNiIsInRhZyI6IiJ9`');
+//         print_r($decrypt);
+//    }
 
     // public function methodName($id){
     //     // $data = Crypt::decrypt($id);
